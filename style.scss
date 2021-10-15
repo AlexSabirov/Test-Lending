@@ -1,0 +1,328 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+	padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	background: #000000;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+	display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+	margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* Шрифты */
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("../fonts/montserrat_bold.eot");
+	src: local("☺"), url("../fonts/montserrat_bold.woff") format("woff"),
+		url("../fonts/montserrat_bold.ttf") format("truetype"), url("../fonts/montserrat_bold.svg") format("svg");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Noto Sans";
+	src: url("../fonts/NotoSans-Regular.eot");
+	src: local("☺"), url("../fonts/NotoSans-Regular.woff") format("woff"),
+		url("../fonts/NotoSans-Regular.ttf") format("truetype"), url("../fonts/NotoSans-Regular.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Avenir";
+	src: url("fonts/AvenirNextLTPro-MediumCn.eot");
+	src: local("☺"), url("fonts/AvenirNextLTPro-MediumCn.woff") format("woff"),
+		url("fonts/AvenirNextLTPro-MediumCn.ttf") format("truetype"),
+		url("fonts/AvenirNextLTPro-MediumCn.svg") format("svg");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Avenir";
+	src: url("fonts/AvenirNextLTPro-BoldCn.eot");
+	src: local("☺"), url("fonts/AvenirNextLTPro-BoldCn.woff") format("woff"),
+		url("fonts/AvenirNextLTPro-BoldCn.ttf") format("truetype"), url("fonts/AvenirNextLTPro-BoldCn.svg") format("svg");
+	font-weight: 800;
+	font-style: normal;
+}
+
+/* Шаблоны */
+
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 25px 100px;
+}
+
+/* Header */
+
+.header {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 230px;
+
+	&__navigation {
+		display: flex;
+		align-items: center;
+		margin-bottom: 56px;
+	}
+
+	&__logo {
+		margin-right: 8px;
+	}
+
+	&__notab {
+		margin-right: 108px;
+	}
+
+	&__login {
+		display: flex;
+		cursor: pointer;
+	}
+
+	&__platform {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 75px;
+	}
+
+	&__download {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 170px;
+	}
+
+	&__partner {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 80px;
+	}
+}
+
+.login {
+	&__icon {
+		margin-right: 14px;
+	}
+
+	&__button {
+		font-family: "Noto Sans";
+		font-style: normal;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 25px;
+		color: #ffffff;
+		text-decoration: none;
+		border-bottom: 1px solid #ffffff;
+	}
+}
+.platform {
+	display: flex;
+	&__info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		font-family: "Montserrat";
+		font-style: normal;
+		font-weight: bold;
+		font-size: 64px;
+		line-height: 70px;
+		color: #ffffff;
+		margin-top: 94px;
+		margin-bottom: 55px;
+		max-width: 643px;
+		min-width: 207px;
+		margin-right: 48px;
+	}
+
+	&__text {
+		display: flex;
+		align-items: flex-end;
+	}
+
+	&__subtitle {
+		font-family: "Noto Sans";
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 27px;
+		color: #ffffff;
+		max-width: 380px;
+	}
+
+	&__line {
+		margin-right: 31px;
+		background: rgba(96, 92, 234, 0.5);
+		filter: blur(1px);
+	}
+}
+.download {
+	&__title {
+		font-family: "Montserrat";
+		font-style: normal;
+		font-weight: bold;
+		font-size: 35px;
+		line-height: 70px;
+		color: #ffffff;
+	}
+
+	&__buttons {
+		display: flex;
+	}
+
+	&__app-store {
+		margin-right: 30px;
+	}
+}
+
+.partner {
+	&__item {
+		display: flex;
+		flex-direction: column;
+		border: 2px solid rgba(255, 255, 255, 0.5);
+		box-sizing: border-box;
+		border-radius: 20px;
+		max-width: 503px;
+		height: 312px;
+		justify-content: center;
+		padding: 55px;
+	}
+
+	&__title {
+		font-family: "Noto Sans";
+		font-style: normal;
+		font-weight: bold;
+		font-size: 30px;
+		line-height: 41px;
+		color: #ffffff;
+		margin-bottom: 30px;
+	}
+
+	&__button {
+		font-family: "Noto Sans";
+		font-style: normal;
+		font-weight: normal;
+		font-size: 24px;
+		line-height: 33px;
+		color: #ffffff;
+	}
+}
+
+/* Cookie */
+
+.cookie {
+	background: #212834;
+	position: fixed;
+	bottom: -100%;
+	width: 100%;
+	transition: all 3s ease;
+
+	&.active-cookie {
+		bottom: 0;
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 21px 24px 22px 100px;
+	}
+
+	&__info {
+		font-family: "Noto Sans";
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 19px;
+		color: #ffffff;
+	}
+
+	&__button {
+		a {
+			display: block;
+			padding: 15px 50px;
+			text-transform: uppercase;
+			background: rgba(255, 255, 255, 0.1);
+			border: 0.5px solid #ffffff;
+			border-radius: 6px;
+			text-decoration: none;
+			font-family: "Noto Sans";
+			font-style: normal;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 19px;
+			color: #ffffff;
+		}
+	}
+}
