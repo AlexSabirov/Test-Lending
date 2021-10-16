@@ -124,6 +124,23 @@ select {
 	padding: 25px 100px;
 }
 
+.title {
+	font-family: "Montserrat";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 51px;
+	line-height: 62px;
+	color: #FFFFFF;
+}
+.subtitle {
+	font-family: "Noto Sans";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 25px;
+	color: #FFFFFF;
+}
+
 /* Header */
 
 .header {
@@ -287,6 +304,8 @@ select {
 	bottom: -100%;
 	width: 100%;
 	transition: all 3s ease;
+	z-index: 10;
+	opacity: 0.8;
 
 	&.active-cookie {
 		bottom: 0;
@@ -324,5 +343,74 @@ select {
 			line-height: 19px;
 			color: #ffffff;
 		}
+	}
+}
+
+/* Mission */
+
+.mission {
+	&__body {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__image {
+		position: relative;
+		margin-left: 100px;
+		left: 0;
+		transition: all 3s ease;
+		&.image-rotate {
+			transform: rotate(90deg);
+		}
+		&.image-translate {
+			left: -100%;
+		}
+	}
+
+	&__info {
+		max-width: 360px;
+	}
+
+	&__title {
+		margin-bottom: 23px;
+	}
+}
+
+/* ID Scanner */
+
+.scanner {
+	position: relative;
+	background: url("../img/scanner/background.png") no-repeat;
+	background-size: 100% auto;
+
+	&__body {
+		display: grid;
+		padding-top: 460px;
+		grid-template-areas:
+			"p1 p2 ."
+			"p1 p2 info";
+		margin-bottom: 300px;
+	}
+
+	&__phone-1 {
+		grid-area: p1;
+	}
+
+	&__phone-2 {
+		grid-area: p2;
+	}
+
+	&__info {
+		grid-area: info;
+		max-width: 400px;
+		gap: 50px;
+	}
+
+	&__title {
+		margin-bottom: 20px;
+	}
+
+	&__subtitle {
+		max-width: 310px;
 	}
 }
