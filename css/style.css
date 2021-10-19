@@ -467,3 +467,196 @@ select {
 .scanner__subtitle {
   max-width: 310px;
 }
+
+/* BI Tool Integration */
+.integration__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 200px;
+}
+
+.integration__info {
+  width: 40%;
+  margin-right: 25px;
+}
+
+.integration__title {
+  margin-bottom: 20px;
+}
+
+.integration__subtitle {
+  max-width: 400px;
+}
+
+.integration__images {
+  width: 60%;
+}
+
+.integration__row-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 50px;
+  position: relative;
+  margin-bottom: 33px;
+}
+
+.integration__row-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.integration__row-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.integration__image-1 {
+  margin-right: 130px;
+}
+
+.integration__image-2 {
+  position: absolute;
+  top: 180px;
+  left: 100px;
+}
+
+.integration__image-3 {
+  margin-left: 20px;
+}
+
+.integration__image-4 {
+  position: absolute;
+  bottom: -40px;
+  left: 40%;
+  z-index: 4;
+}
+
+.integration__image-5 {
+  margin-right: 80px;
+}
+
+.integration__image-6 {
+  margin-right: 45px;
+}
+
+.integration__image-7 {
+  position: relative;
+}
+
+/* QR Code */
+.qr__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  margin-bottom: 235px;
+}
+
+.qr__backround {
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.qr__backround-1 {
+  position: absolute;
+  z-index: 0;
+  left: -100px;
+}
+
+.qr__backround-1 img {
+  z-index: -2;
+}
+
+.qr__backround-2 {
+  position: absolute;
+  z-index: 0;
+  right: -100px;
+}
+
+.qr__backround-2 img {
+  z-index: -2;
+}
+
+.qr__logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.qr__items {
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-top: 140px;
+}
+
+.qr__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.qr__title {
+  margin-bottom: 23px;
+}
+
+.qr__subtitle {
+  max-width: 315px;
+  margin-bottom: 60px;
+}
+
+.qr__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.qr__app-store {
+  margin-right: 30px;
+}
+
+.qr__iphone-2 {
+  -webkit-transform: translateY(55%);
+          transform: translateY(55%);
+}

@@ -414,3 +414,165 @@ select {
 		max-width: 310px;
 	}
 }
+
+/* BI Tool Integration */
+
+.integration {
+	&__body {
+		display: flex;
+		margin-bottom: 200px;
+	}
+
+	&__info {
+		width: 40%;
+		margin-right: 25px;
+	}
+
+	&__title {
+		margin-bottom: 20px;
+	}
+
+	&__subtitle {
+		max-width: 400px;
+	}
+
+	&__images {
+		width: 60%;
+	}
+
+	&__row-1 {
+		display: flex;
+		justify-content: flex-end;
+		margin-right: 50px;
+		position: relative;
+		margin-bottom: 33px;
+	}
+
+	&__row-2 {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		position: relative;
+		margin-bottom: 30px;
+	}
+
+	&__row-3 {
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+	}
+
+	&__image-1 {
+		margin-right: 130px;
+	}
+
+	&__image-2 {
+		position: absolute;
+		top: 180px;
+		left: 100px;
+	}
+
+	&__image-3 {
+		margin-left: 20px;
+	}
+
+	&__image-4 {
+		position: absolute;
+		bottom: -40px;
+		left: 40%;
+		z-index: 4;
+	}
+
+	&__image-5 {
+		margin-right: 80px;
+	}
+
+	&__image-6 {
+		margin-right: 45px;
+	}
+
+	&__image-7 {
+		position: relative;
+	}
+}
+
+/* QR Code */
+
+.qr {
+	&__body {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		margin-bottom: 235px;
+	}
+
+	&__backround {
+		z-index: -1;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__backround-1 {
+		position: absolute;
+		z-index: 0;
+		left: -100px;
+		img {
+			z-index: -2;
+		}
+	}
+
+	&__backround-2 {
+		position: absolute;
+		z-index: 0;
+		right: -100px;
+		img {
+			z-index: -2;
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	&__items {
+		z-index: 2;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-top: 140px;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		margin-bottom: 23px;
+	}
+
+	&__subtitle {
+		max-width: 315px;
+		margin-bottom: 60px;
+	}
+
+	&__buttons {
+		display: flex;
+	}
+
+	&__app-store {
+		margin-right: 30px;
+	}
+
+	&__google-play {
+	}
+
+	&__iphone-1 {
+	}
+
+	&__iphone-2 {
+		transform: translateY(55%);
+	}
+}
