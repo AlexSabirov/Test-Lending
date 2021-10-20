@@ -38,7 +38,5 @@ function animImageOn() {
 		imageTranslate();
 		setTimeout(() => { image.classList.remove('image-rotate') }, 3000);
 	}
-
 }
-
 
