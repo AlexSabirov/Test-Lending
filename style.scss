@@ -179,8 +179,9 @@ select {
 		align-items: center;
 		margin-bottom: 56px;
 
-		@media (max-width: 1000px) {
+		@media (max-width: 769px) {
 			justify-content: space-between;
+
 			margin-bottom: 0;
 		}
 	}
@@ -339,14 +340,15 @@ select {
 		box-shadow: 30px -200px 200px 70px #000000 inset;
 
 		@media (max-width: 769px) {
-			transform: translateX(-25%);
 			img {
 				width: 160px;
 			}
 		}
+		@media (max-width: 468px) {
+			transform: translateX(-25%);
+		}
 	}
 }
-
 .download {
 	&__title {
 		font-family: "Montserrat";
@@ -394,7 +396,6 @@ select {
 		}
 	}
 }
-
 .partner {
 	&__item {
 		display: flex;
@@ -500,7 +501,7 @@ select {
 			line-height: 19px;
 			color: #ffffff;
 			@media (max-width: 769px) {
-padding: 15px 35px;
+				padding: 15px 35px;
 			}
 		}
 	}
@@ -512,6 +513,10 @@ padding: 15px 35px;
 	&__body {
 		display: flex;
 		justify-content: space-between;
+		@media (max-width: 769px) {
+			flex-direction: column;
+			margin-bottom: 190px;
+		}
 	}
 
 	&__image {
@@ -519,16 +524,30 @@ padding: 15px 35px;
 		margin-left: 100px;
 		left: 0;
 		transition: all 3s ease;
+		@media (max-width: 769px) {
+			margin-left: 0;
+			align-self: center;
+			img {
+				max-width: 100%;
+			}
+		}
 		&.image-rotate {
 			transform: rotate(90deg);
 		}
 		&.image-translate {
 			left: -100%;
 		}
+		@media (max-width: 769px) {
+			order: 2;
+		}
 	}
 
 	&__info {
 		max-width: 360px;
+		@media (max-width: 769px) {
+			order: 1;
+			margin-bottom: 160px;
+		}
 	}
 
 	&__title {
@@ -550,20 +569,50 @@ padding: 15px 35px;
 			"p1 p2 ."
 			"p1 p2 info";
 		margin-bottom: 300px;
+		@media (max-width: 1000px) {
+			display: flex;
+			flex-direction: column;
+			padding-top: 220px;
+			margin-bottom: 145px;
+		}
 	}
 
 	&__phone-1 {
 		grid-area: p1;
+		margin-right: 15px;
+
+		@media (max-width: 1000px) {
+			order: 2;
+			margin-bottom: 55px;
+			align-self: center;
+			img {
+				max-width: 100%;
+			}
+		}
 	}
 
 	&__phone-2 {
 		grid-area: p2;
+		margin-right: 15px;
+
+		@media (max-width: 1000px) {
+			order: 3;
+			align-self: center;
+			img {
+				max-width: 100%;
+			}
+		}
 	}
 
 	&__info {
 		grid-area: info;
 		max-width: 400px;
 		gap: 50px;
+
+		@media (max-width: 1000px) {
+			order: 1;
+			margin-bottom: 70px;
+		}
 	}
 
 	&__title {
@@ -581,11 +630,22 @@ padding: 15px 35px;
 	&__body {
 		display: flex;
 		margin-bottom: 200px;
+		@media (max-width: 769px) {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 35px;
+		}
 	}
 
 	&__info {
 		width: 40%;
 		margin-right: 25px;
+
+		@media (max-width: 769px) {
+			width: auto;
+			margin-bottom: 30px;
+			margin-right: 0;
+		}
 	}
 
 	&__title {
@@ -598,6 +658,9 @@ padding: 15px 35px;
 
 	&__images {
 		width: 60%;
+		@media (max-width: 769px) {
+			width: auto;
+		}
 	}
 
 	&__row-1 {
@@ -664,6 +727,14 @@ padding: 15px 35px;
 		flex-direction: column;
 		position: relative;
 		margin-bottom: 270px;
+
+		@media (max-width: 1100px) {
+			margin-bottom: 130px;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
 	}
 
 	&__backround {
@@ -679,6 +750,13 @@ padding: 15px 35px;
 		img {
 			z-index: -2;
 		}
+
+		@media (max-width: 1100px) {
+			right: 0;
+			img {
+				width: 100%;
+			}
+		}
 	}
 
 	&__backround-2 {
@@ -688,12 +766,25 @@ padding: 15px 35px;
 		img {
 			z-index: -2;
 		}
+
+		@media (max-width: 1100px) {
+			left: 0;
+			top: 20%;
+			img {
+				width: 100%;
+			}
+		}
 	}
 
 	&__logo {
 		position: absolute;
 		top: 0;
 		right: 0;
+
+		@media (max-width: 1100px) {
+			top: 30%;
+			right: 75%;
+		}
 	}
 
 	&__items {
@@ -702,11 +793,22 @@ padding: 15px 35px;
 		justify-content: space-between;
 		align-items: flex-end;
 		margin-top: 140px;
+
+		@media (max-width: 1100px) {
+			align-items: stretch;
+			flex-direction: column;
+			margin-top: 260px;
+		}
 	}
 
 	&__info {
 		display: flex;
 		flex-direction: column;
+		margin-right: 15px;
+
+		@media (max-width: 1100px) {
+			margin-bottom: 240px;
+		}
 	}
 
 	&__title {
@@ -720,14 +822,46 @@ padding: 15px 35px;
 
 	&__buttons {
 		display: flex;
+
+		@media (max-width: 1100px) {
+			flex-direction: column;
+			align-self: center;
+		}
 	}
 
 	&__app-store {
 		margin-right: 30px;
+
+		@media (max-width: 1100px) {
+			margin-right: 0;
+			margin-bottom: 24px;
+			width: 185px;
+		}
+	}
+
+	&__google-play {
+		@media (max-width: 1100px) {
+			width: 185px;
+		}
+	}
+
+	&__iphone-1 {
+		margin-right: 15px;
+		@media (max-width: 1100px) {
+			align-self: center;
+			margin-right: 0;
+			margin-bottom: 50px;
+		}
 	}
 
 	&__iphone-2 {
 		transform: translateY(55%);
+
+		@media (max-width: 1100px) {
+			margin-right: 0;
+			transform: translateY(0%);
+			align-self: center;
+		}
 	}
 }
 
@@ -737,7 +871,6 @@ padding: 15px 35px;
 	&__body {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		position: relative;
 		margin-bottom: 270px;
 	}
@@ -745,6 +878,13 @@ padding: 15px 35px;
 	&__background {
 		padding: 255px 0;
 		z-index: -1;
+
+		@media (max-width: 769px) {
+			margin: 0 auto;
+			img {
+				width: 100%;
+			}
+		}
 	}
 
 	&__items {
@@ -752,6 +892,8 @@ padding: 15px 35px;
 		z-index: 1;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+		margin: 0 auto;
 	}
 
 	&__item {
@@ -761,20 +903,42 @@ padding: 15px 35px;
 		padding: 147px 350px;
 		background: url("../img/generate/background-iphone.png") center;
 		background-repeat: no-repeat;
+
+		@media (max-width: 769px) {
+			flex-direction: column;
+			align-items: center;
+			background-position: cover;
+			padding: 0;
+			width: 100%;
+			order: 2;
+		}
 	}
 
 	&__iphone {
-		margin: 0 auto;
+		@media (max-width: 769px) {
+			img {
+				width: 100%;
+			}
+		}
 	}
 
 	&__label {
 		position: absolute;
 		top: 30%;
 		right: 10%;
+
+		@media (max-width: 769px) {
+			top: 100%;
+			right: 50%;
+		}
 	}
 
 	&__arrow {
 		margin-bottom: 15px;
+
+		@media (max-width: 769px) {
+			transform: translateX(175%) rotate(45deg);
+		}
 	}
 
 	&__text {
@@ -792,10 +956,28 @@ padding: 15px 35px;
 		justify-content: space-between;
 		align-items: flex-end;
 		margin-top: -70px;
+
+		@media (max-width: 769px) {
+			order: 1;
+			flex-direction: column;
+			align-items: stretch;
+			margin-top: 0;
+		}
+	}
+
+	&__title {
+		@media (max-width: 769px) {
+			margin-bottom: 24px;
+			width: 100%;
+		}
 	}
 
 	&__subtitle {
 		max-width: 300px;
+
+		@media (max-width: 769px) {
+			margin-bottom: 70px;
+		}
 	}
 }
 
