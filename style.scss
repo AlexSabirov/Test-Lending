@@ -722,6 +722,7 @@ select {
 /* QR Code */
 
 .qr {
+	overflow: hidden;
 	&__body {
 		display: flex;
 		flex-direction: column;
@@ -886,7 +887,6 @@ select {
 
 		@media (max-width: 769px) {
 			margin: 0 auto;
-
 		}
 	}
 
@@ -943,7 +943,7 @@ select {
 		margin-bottom: 15px;
 
 		@media (max-width: 1000px) {
-			transform: translateX(100%)
+			transform: translateX(100%);
 		}
 		@media (max-width: 769px) {
 			transform: translateX(175%) rotate(45deg);
@@ -1002,16 +1002,31 @@ select {
 	&__info {
 		align-self: flex-end;
 		margin-right: 60px;
+
+		@media (max-width: 769px) {
+			align-self: flex-start;
+			margin-right: 0;
+		}
 	}
 
 	&__title {
 		margin-bottom: 23px;
 	}
 
+	&__subtitle {
+		@media (max-width: 769px) {
+			margin-bottom: 70px;
+		}
+	}
+
 	&__content {
 		background: url("../img/ordering/background.png") no-repeat center;
 		display: flex;
 		flex-direction: column;
+
+		@media (max-width: 769px) {
+			background-size: contain;
+		}
 	}
 
 	&__item {

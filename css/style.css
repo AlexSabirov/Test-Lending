@@ -921,6 +921,10 @@ select {
 }
 
 /* QR Code */
+.qr {
+  overflow: hidden;
+}
+
 .qr__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1316,8 +1320,22 @@ select {
   margin-right: 60px;
 }
 
+@media (max-width: 769px) {
+  .ordering__info {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-right: 0;
+  }
+}
+
 .ordering__title {
   margin-bottom: 23px;
+}
+
+@media (max-width: 769px) {
+  .ordering__subtitle {
+    margin-bottom: 70px;
+  }
 }
 
 .ordering__content {
@@ -1329,6 +1347,12 @@ select {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media (max-width: 769px) {
+  .ordering__content {
+    background-size: contain;
+  }
 }
 
 .ordering__item {
