@@ -99,20 +99,30 @@ select {
 
 @font-face {
 	font-family: "Avenir";
-	src: url("fonts/AvenirNextLTPro-MediumCn.eot");
-	src: local("☺"), url("fonts/AvenirNextLTPro-MediumCn.woff") format("woff"),
-		url("fonts/AvenirNextLTPro-MediumCn.ttf") format("truetype"),
-		url("fonts/AvenirNextLTPro-MediumCn.svg") format("svg");
+	src: url("../fonts/AvenirNextLTPro-MediumCn.eot");
+	src: local("☺"), url("../fonts/AvenirNextLTPro-MediumCn.woff") format("woff"),
+		url("../fonts/AvenirNextLTPro-MediumCn.ttf") format("truetype"),
+		url("../fonts/AvenirNextLTPro-MediumCn.svg") format("svg");
 	font-weight: 500;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Avenir";
-	src: url("fonts/AvenirNextLTPro-BoldCn.eot");
-	src: local("☺"), url("fonts/AvenirNextLTPro-BoldCn.woff") format("woff"),
-		url("fonts/AvenirNextLTPro-BoldCn.ttf") format("truetype"), url("fonts/AvenirNextLTPro-BoldCn.svg") format("svg");
+	src: url("../fonts/AvenirNextLTPro-BoldCn.eot");
+	src: local("☺"), url("../fonts/AvenirNextLTPro-BoldCn.woff") format("woff"),
+		url("../fonts/AvenirNextLTPro-BoldCn.ttf") format("truetype"),
+		url("../fonts/AvenirNextLTPro-BoldCn.svg") format("svg");
 	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Medium.eot");
+	src: local("☺"), url("../fonts/Roboto-Medium.woff") format("woff"),
+		url("../fonts/Roboto-Medium.ttf") format("truetype"), url("../fonts/Roboto-Medium.svg") format("svg");
+	font-weight: 500;
 	font-style: normal;
 }
 
@@ -122,6 +132,9 @@ select {
 	max-width: 1440px;
 	margin: 0 auto;
 	padding: 25px 100px;
+	@media (max-width: 1000px) {
+		padding: 10px 15px;
+	}
 }
 
 .title {
@@ -131,7 +144,12 @@ select {
 	font-size: 51px;
 	line-height: 62px;
 	color: #ffffff;
+	@media (max-width: 1000px) {
+		font-size: 24px;
+		line-height: 29px;
+	}
 }
+
 .subtitle {
 	font-family: "Noto Sans";
 	font-style: normal;
@@ -139,6 +157,10 @@ select {
 	font-size: 18px;
 	line-height: 25px;
 	color: #ffffff;
+	@media (max-width: 1000px) {
+		font-size: 16px;
+		line-height: 22px;
+	}
 }
 
 /* Header */
@@ -148,18 +170,41 @@ select {
 	flex-direction: column;
 	margin-bottom: 230px;
 
+	@media (max-width: 769px) {
+		margin-bottom: 55px;
+	}
+
 	&__navigation {
 		display: flex;
 		align-items: center;
 		margin-bottom: 56px;
+
+		@media (max-width: 1000px) {
+			justify-content: space-between;
+			margin-bottom: 0;
+		}
 	}
 
 	&__logo {
+		display: flex;
+		align-items: center;
+	}
+
+	&__image {
 		margin-right: 8px;
+
+		@media (max-width: 769px) {
+			width: 52px;
+		}
 	}
 
 	&__notab {
 		margin-right: 108px;
+
+		@media (max-width: 769px) {
+			width: 46px;
+			margin-right: 0;
+		}
 	}
 
 	&__login {
@@ -177,18 +222,34 @@ select {
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 170px;
+
+		@media (max-width: 769px) {
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 70px;
+		}
 	}
 
 	&__partner {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 80px;
+
+		@media (max-width: 769px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 }
 
 .login {
 	&__icon {
 		margin-right: 14px;
+
+		@media (max-width: 769px) {
+			display: none;
+		}
 	}
 
 	&__button {
@@ -200,13 +261,24 @@ select {
 		color: #ffffff;
 		text-decoration: none;
 		border-bottom: 1px solid #ffffff;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+
+		@media (max-width: 769px) {
+			font-size: 14px;
+			line-height: 19px;
+		}
 	}
 }
 .platform {
 	display: flex;
+	overflow: hidden;
 	&__info {
 		display: flex;
 		flex-direction: column;
+		z-index: 3;
 	}
 
 	&__title {
@@ -221,6 +293,12 @@ select {
 		max-width: 643px;
 		min-width: 207px;
 		margin-right: 48px;
+
+		@media (max-width: 769px) {
+			font-size: 35px;
+			line-height: 40px;
+			margin-bottom: 24px;
+		}
 	}
 
 	&__text {
@@ -236,6 +314,12 @@ select {
 		line-height: 27px;
 		color: #ffffff;
 		max-width: 380px;
+
+		@media (max-width: 769px) {
+			font-size: 16px;
+			line-height: 22px;
+			max-width: 240px;
+		}
 	}
 
 	&__line {
@@ -244,11 +328,22 @@ select {
 		padding-right: 30px;
 		background: rgba(96, 92, 234, 0.5);
 		box-shadow: 0px -20px 120px 17px #000000 inset;
+
+		@media (max-width: 769px) {
+			display: none;
+		}
 	}
 	&__image {
 		padding: 100px 100px 0 100px;
 		background: rgba(250, 0, 255, 0.2);
 		box-shadow: 30px -200px 200px 70px #000000 inset;
+
+		@media (max-width: 769px) {
+			transform: translateX(-25%);
+			img {
+				width: 160px;
+			}
+		}
 	}
 }
 
@@ -260,15 +355,43 @@ select {
 		font-size: 35px;
 		line-height: 70px;
 		color: #ffffff;
+
+		@media (max-width: 769px) {
+			font-size: 24px;
+			line-height: 29px;
+			margin-bottom: 34px;
+		}
 	}
 
 	&__buttons {
 		display: flex;
 		margin-right: 80px;
+
+		@media (max-width: 769px) {
+			flex-direction: column;
+			align-items: center;
+			margin-right: 0;
+		}
 	}
 
 	&__app-store {
 		margin-right: 30px;
+
+		@media (max-width: 769px) {
+			margin-right: 0;
+			margin-bottom: 24px;
+			img {
+				width: 185px;
+			}
+		}
+	}
+
+	&__google-play {
+		@media (max-width: 769px) {
+			img {
+				width: 185px;
+			}
+		}
 	}
 }
 
@@ -283,6 +406,11 @@ select {
 		height: 312px;
 		justify-content: center;
 		padding: 55px;
+
+		@media (max-width: 769px) {
+			width: 100%;
+			padding: 40px 30px;
+		}
 	}
 
 	&__title {
@@ -293,6 +421,11 @@ select {
 		line-height: 41px;
 		color: #ffffff;
 		margin-bottom: 30px;
+
+		@media (max-width: 769px) {
+			font-size: 24px;
+			line-height: 33px;
+		}
 	}
 
 	&__button {
@@ -302,6 +435,11 @@ select {
 		font-size: 24px;
 		line-height: 33px;
 		color: #ffffff;
+
+		@media (max-width: 769px) {
+			font-size: 18px;
+			line-height: 25px;
+		}
 	}
 }
 
@@ -325,6 +463,10 @@ select {
 		justify-content: space-between;
 		align-items: center;
 		padding: 21px 24px 22px 100px;
+
+		@media (max-width: 769px) {
+			padding: 20px 15px;
+		}
 	}
 
 	&__info {
@@ -334,6 +476,12 @@ select {
 		font-size: 14px;
 		line-height: 19px;
 		color: #ffffff;
+
+		@media (max-width: 769px) {
+			font-size: 12px;
+			line-height: 16px;
+			margin-right: 50px;
+		}
 	}
 
 	&__button {
@@ -351,6 +499,9 @@ select {
 			font-size: 14px;
 			line-height: 19px;
 			color: #ffffff;
+			@media (max-width: 769px) {
+padding: 15px 35px;
+			}
 		}
 	}
 }
