@@ -1129,30 +1129,30 @@ select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   position: relative;
   margin-bottom: 270px;
 }
 
 .generate__background {
+  position: absolute;
+  top: 0;
+  left: 0;
   padding: 255px 0;
   z-index: -1;
+}
+
+.generate__background img {
+  width: 100%;
 }
 
 @media (max-width: 769px) {
   .generate__background {
     margin: 0 auto;
   }
-  .generate__background img {
-    width: 100%;
-  }
 }
 
 .generate__items {
-  position: absolute;
+  position: relative;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1161,10 +1161,7 @@ select {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .generate__item {
@@ -1172,6 +1169,8 @@ select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
   margin-bottom: 80px;
   padding: 147px 350px;
   background: url("../img/generate/background-iphone.png") center;
@@ -1208,6 +1207,12 @@ select {
   right: 10%;
 }
 
+@media (max-width: 1000px) {
+  .generate__label {
+    right: 22%;
+  }
+}
+
 @media (max-width: 769px) {
   .generate__label {
     top: 100%;
@@ -1217,6 +1222,13 @@ select {
 
 .generate__arrow {
   margin-bottom: 15px;
+}
+
+@media (max-width: 1000px) {
+  .generate__arrow {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
 }
 
 @media (max-width: 769px) {
@@ -1244,6 +1256,8 @@ select {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -1259,6 +1273,9 @@ select {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
     -webkit-box-align: stretch;
         -ms-flex-align: stretch;
             align-items: stretch;
@@ -1269,7 +1286,6 @@ select {
 @media (max-width: 769px) {
   .generate__title {
     margin-bottom: 24px;
-    width: 100%;
   }
 }
 
