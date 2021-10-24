@@ -133,7 +133,7 @@ select {
 	max-width: 1440px;
 	margin: 0 auto;
 	padding: 25px 100px;
-	overflow: hidden;
+	// overflow: hidden;
 	@media (max-width: 1000px) {
 		padding: 10px 15px;
 	}
@@ -1214,6 +1214,7 @@ select {
 	width: 300px;
 	margin-top: 60px;
 	cursor: pointer;
+	max-width: 95%;
 
 	font-family: "Montserrat";
 	font-style: normal;
