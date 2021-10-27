@@ -5,10 +5,12 @@ const next = document.querySelector('.slider__next');
 const prev = document.querySelector('.slider__prev');
 const dots = document.querySelectorAll('.slider__dot');
 
+const dotClick = document.querySelector('.slider__dots');
 
 let position = -300;
 let timer;
 let currentDot;
+let slideCount;
 let dot = Array.from(dots);
 
 track.style.transform = `translateX(${position}px)`;
@@ -17,17 +19,20 @@ next.addEventListener('click', () => {
 	timer = setInterval(slideNext, 4);
 	console.log(`currentDot: ${currentDot}`);
 	console.log(`position: ${position}`);
+	console.log(`slideCount: ${slideCount}`);
 });
 
 prev.addEventListener('click', () => {
 	timer = setInterval(slidePrev, 4);
 	console.log(`currentDot: ${currentDot}`);
 	console.log(`position: ${position}`);
+	console.log(`slideCount: ${slideCount}`);
 });
 
 function slideNext() {
 	next.disabled = true;
 	position -= 5;
+	slideCount = currentDot;
 	track.style.transform = `translateX(${position}px)`;
 	if (position % 300 === 0) {
 		clearInterval(timer);
@@ -42,6 +47,7 @@ function slideNext() {
 function slidePrev() {
 	prev.disabled = true;
 	position += 5;
+	slideCount = currentDot;
 	track.style.transform = `translateX(${position}px)`;
 	if (position % 300 === 0) {
 		clearInterval(timer);
@@ -55,6 +61,7 @@ function slidePrev() {
 
 function dotsShifting() {
 	currentDot = Math.abs(position / 300);
+	slideCount = Math.abs(position / 300);
 	dots.forEach((item, i) => {
 		if ((i + 1) === currentDot) {
 			item.classList.add('dot-active');
@@ -70,8 +77,45 @@ dotsShifting();
 dot.forEach((item, i) => {
 	item.addEventListener('click', () => {
 		currentDot = i + 1;
-		position = -300 * currentDot;
-		track.style.transform = `translateX(${position}px)`;
+
+		if (slideCount < currentDot) {
+
+			timer = setInterval(() => {
+				next.disabled = true;
+				position -= 10;
+				slideCount = currentDot;
+				track.style.transform = `translateX(${position}px)`;
+				if (position  === -300 * currentDot) {
+					clearInterval(timer);
+					dotsShifting();
+					next.disabled = false;
+				}
+				if (position < -2700) {
+					position = 0;
+				}
+			}, 4);
+
+
+		} else if (slideCount > currentDot) {
+
+			timer = setInterval(() => {
+				position += 10;
+				slideCount = currentDot;
+				track.style.transform = `translateX(${position}px)`;
+				if (position  === -300 * currentDot) {
+					clearInterval(timer);
+					dotsShifting();
+					prev.disabled = false;
+				}
+				if (position > -300) {
+					position = -3000;
+				}
+
+			}, 4);
+
+		};
+
+		slideCount = currentDot;
 
 		dots.forEach((item, i) => {
 			if ((i + 1) === currentDot) {
