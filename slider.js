@@ -5,8 +5,6 @@ const next = document.querySelector('.slider__next');
 const prev = document.querySelector('.slider__prev');
 const dots = document.querySelectorAll('.slider__dot');
 
-const dotClick = document.querySelector('.slider__dots');
-
 let position = -300;
 let timer;
 let currentDot;
@@ -79,16 +77,19 @@ dot.forEach((item, i) => {
 		currentDot = i + 1;
 
 		if (slideCount < currentDot) {
-
 			timer = setInterval(() => {
-				next.disabled = true;
+				for (let i = 0; i < dot.length; i++) {
+					dot[i].disabled = true;
+				}
 				position -= 10;
 				slideCount = currentDot;
 				track.style.transform = `translateX(${position}px)`;
-				if (position  === -300 * currentDot) {
+				if (position === -300 * currentDot) {
 					clearInterval(timer);
 					dotsShifting();
-					next.disabled = false;
+					for (let i = 0; i < dot.length; i++) {
+						dot[i].disabled = false;
+					}
 				}
 				if (position < -2700) {
 					position = 0;
@@ -99,13 +100,18 @@ dot.forEach((item, i) => {
 		} else if (slideCount > currentDot) {
 
 			timer = setInterval(() => {
+				for (let i = 0; i < dot.length; i++) {
+					dot[i].disabled = true;
+				}
 				position += 10;
 				slideCount = currentDot;
 				track.style.transform = `translateX(${position}px)`;
-				if (position  === -300 * currentDot) {
+				if (position === -300 * currentDot) {
 					clearInterval(timer);
 					dotsShifting();
-					prev.disabled = false;
+					for (let i = 0; i < dot.length; i++) {
+						dot[i].disabled = false;
+					}
 				}
 				if (position > -300) {
 					position = -3000;
